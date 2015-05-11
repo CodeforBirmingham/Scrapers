@@ -19,6 +19,7 @@ browser = webdriver.Chrome()
 with open(outfile, "w") as csvfile:
     fieldnames = ["permit_number", "name", "address", "type", "smoke_free", "score", "date"]
     writer = csv.DictWriter(csvfile, fieldnames=fieldnames, quoting=csv.QUOTE_NONNUMERIC)
+    writer.writeheader()
 
     for char in string.ascii_uppercase:
 
