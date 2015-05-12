@@ -46,3 +46,5 @@ with open(outfile, "w") as csvfile:
             writer.writerow(data)
 
         print("Done with " + char)
+
+browser.close()
