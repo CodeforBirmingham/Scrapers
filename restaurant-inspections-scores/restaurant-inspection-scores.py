@@ -1,6 +1,7 @@
 #!/bin/env python3
 
 import csv
+import optparse
 import os.path
 import string
 import sys
@@ -8,7 +9,11 @@ import sys
 from selenium import webdriver
 from selenium.common.exceptions import NoSuchElementException
 
-outfile = sys.argv[1]
+usage = "usage: %prog [options] outfile"
+parser = optparse.OptionParser(usage)
+(options, args) = parser.parse_args()
+
+outfile = args[0]
 
 if os.path.isfile(outfile):
     print("Output file " + outfile + " already exists.")
